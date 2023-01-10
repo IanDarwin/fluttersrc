@@ -1,3 +1,5 @@
 = fluttersrc
 
-Like my javasrc repo, this is intended to be a catchall for various Flutter demos.
+Like my https://github.com/IanDarwin/javasrc[javasrc repo], this is intended to be a catchall for various Flutter demos.
+
+Each folder is a separate project, in which you can "flutter run" or open in Android Studio.
