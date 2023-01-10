@@ -1,0 +1,9 @@
+= l10n_counter_way1
+
+A Localized Flutter project, done "way 1" (no ARB files).
+
+== Getting Started
+
+Refer to https://medium.com/saugo360/managing-locale-in-flutter-7693a9d4d6ac
+and the official docs (for componensts used in "both ways") at
+https://docs.flutter.dev/development/accessibility-and-localization/internationalization
