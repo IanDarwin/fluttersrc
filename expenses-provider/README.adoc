@@ -1,0 +1,4 @@
+= Expenses - Provider
+
+A Flutter project for the Expenses app using the "provider" state management api.
+
