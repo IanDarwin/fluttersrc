@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Platform.isIOS || Platform.isMacOS ?
     const CupertinoApp(
-      title: 'Flutter Demo',
-      home: MyHomePage(title: 'Flutter Cupertino Home Page', isCupertino: true),
+        title: 'Flutter Demo',
+        home: MyHomePage(title: 'Flutter Cupertino Home Page', isCupertino: true),
         theme: CupertinoThemeData(
           primaryColor: Colors.blue,
         )
@@ -68,10 +68,10 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     if (widget.isCupertino) {
       return CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-            middle: Text('Cupertino Store')
+        navigationBar: const CupertinoNavigationBar(
+            middle: Text('Cupertino Demo')
         ),
-          child: body,
+        child: body,
       );
     }
     return Scaffold(
