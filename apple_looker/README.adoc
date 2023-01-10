@@ -1,0 +1,8 @@
+= apple_looker
+
+A Flutter project using Cupertino on iOS and Material elsewhere.
+
+The only part that differs is the overall (MaterialApp vs CupertinoApp)
+and one Icon. In a real app more conditionals would be needed,
+but this code setups up a framework for doing so.
+
