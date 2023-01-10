@@ -1,0 +1,20 @@
+= expenses
+
+A simple app for tracking expenses and submitting them to your HR department for reimbursement or tracking.
+
+This uses a NativeView to show the Expenses Detail/Edit form, and that part is currently only written for Android.
+
+== Getting Started
+
+Just run the app and follow the prompts :-)  Seriuosly, this it not a production app yet by any means.
+
+USE AT OWN RISK.
+
+== I18N
+
+This project generates localized messages based on arb files found in
+the `lib/src/localization` directory.
+
+To support additional languages, please visit the tutorial on
+https://flutter.dev/docs/development/accessibility-and-localization/internationalization[
+Internationalizing Flutter apps].

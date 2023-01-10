@@ -1,0 +1,3 @@
+= fluttersrc
+
+Like my javasrc repo, this is intended to be a catchall for various Flutter demos.

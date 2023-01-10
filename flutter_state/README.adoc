@@ -1,0 +1,23 @@
+= flutter_state
+
+This is a variant of the Counter demo done over using various state-management APIs:
+
+* Provider
+* BLoC
+* (Others welcome, via Pull Request - TIA!)
+
+The project is a bit unorthodox in having more than one main program, but you can just
+run whichever main you want to demonstrate.
+This isn't meant to be deployed to production devices, so it doesn't seem a problem.
+When trying them out, keep a close eye on the run switcher beside the run button
+to be sure you're running the right demo.
+I've also color coded the app bar:
+
+* Purple for Provider
+* Blue for Bloc
+
+The examples are similar to the canonical Counter app whose data model is a single int,
+but the techniques extrapolate fairly directly to more complex models
+like a List<Customer> or List<AnyThing>.
+
+Enjoy!
