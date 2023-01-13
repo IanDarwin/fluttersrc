@@ -1,19 +1,29 @@
 = Random Image
 
-A Flutter App for Android, iOS, etc., to grab random images from picsum
+A Flutter App for Android, iOS, etc., to grab random images from
+https://picsum.photos[picsum].
+
+*I can make no assertions about the quality, safety, or copyright status of pictures used by this app*
+since they are all provided by PicSum.
+Use at own risk in situations where
+bad images may have bad results.
 
 == PicSum?
 
 A site that collects random photos off the internet, most of them not half-bad,
 and makes them available.
 
-*I can make no assertions about the copyright status of pictures used by this app*
-since they are all provided by PicSum.
+
+== Icon
+
+If you put a new icon in place, remember to run
+
+	flutter pub run flutter_launcher_icons:main
 
 == History
 
 This project started when Twitter user "AJ" @ItsmeAjayKV
-asked ChatGPT a request like "write a program with two buttons in different colors,
+gage ChatGPT a request like "write a program with two buttons in different colors,
 both to grab a random image from the Internet."
 
 Their result, slightly tweaked, is at https://dartpad.dev/?id=8710c98dbd5e642a3349ae5129e5ba90
@@ -21,3 +31,4 @@ Their result, slightly tweaked, is at https://dartpad.dev/?id=8710c98dbd5e642a33
 That was the starting point of this code.
 
 It's been altered a lot since; you can compare, if you dare, or even if you care.
+They're aware their code is over there.
