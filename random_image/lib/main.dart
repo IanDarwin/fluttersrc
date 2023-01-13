@@ -1,4 +1,8 @@
+
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'dart:math';
 
 void main() => runApp(const MyApp());
@@ -13,53 +17,30 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Demo',
-      home: MyHomePage(),
+      home: MainScreen(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+/// The PicSum API lets you get a random image, but we pick a random
+/// number for it and fetch that, so we can fetch the details without
+/// having to use the http api just to get the picture.
+class MainScreen extends StatefulWidget {
+
+  const MainScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('My App'),
-      ),
-      body: Center(
-        child:  ElevatedButton(
-          child: const Text('Random Image'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const DetailsScreen(),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
+  State<MainScreen> createState() => MainScreenState();
 }
 
-class DetailsScreen extends StatefulWidget {
-
-  const DetailsScreen({super.key});
-
-  @override
-  State<DetailsScreen> createState() => DetailsScreenState();
-}
-
-class DetailsScreenState extends State<DetailsScreen> {
+class MainScreenState extends State<MainScreen> {
   int id = _random.nextInt(maxImages);
-  DetailsScreenState();
+  MainScreenState();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Details Screen'),
+        title: const Text('Flutter Demo: Random Picture'),
       ),
       body: Column(children: [
         Center(
@@ -79,14 +60,27 @@ class DetailsScreenState extends State<DetailsScreen> {
                     },
                     child: const Text('Another')),
                 ElevatedButton(
-                    onPressed: ()  {
+                    onPressed: () async {
+                      var url = Uri.parse('https://picsum.photos/id/$id/info');
+                      var response = await http.get(url);
+                      var message = "";
+                      if (response.statusCode == 200) {
+                        var json = jsonDecode(response.body);
+                        message =
+"""Photographer: ${json['author']}
+Origin: ${json['url']}
+PicSum ID: ${json['id']}
+ """;
+                      } else {
+                        message = "HTTP error ${response.statusCode}";
+                      }
                       showDialog<void>(
                           context: context,
                           barrierDismissible: true, // must tap a button to dismiss
                           builder: (BuildContext context) {
                             return AlertDialog(
                               title: const Text("Details"),
-                              content: const Text("Details code not written yet, sorry"),
+                              content: Text(message),
                               actions: <Widget>[
                                 TextButton(
                                   child: const Text('OK'),
