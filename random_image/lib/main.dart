@@ -4,6 +4,7 @@ import 'dart:math';
 void main() => runApp(const MyApp());
 
 final _random = Random();
+const int maxImages = 150;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -52,7 +53,7 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class DetailsScreenState extends State<DetailsScreen> {
-  int id = _random.nextInt(100);
+  int id = _random.nextInt(maxImages);
   DetailsScreenState();
   @override
   Widget build(BuildContext context) {
@@ -73,7 +74,7 @@ class DetailsScreenState extends State<DetailsScreen> {
                 ElevatedButton(
                     onPressed: ()  {
                       setState(() {
-                        id = _random.nextInt(100);
+                        id = _random.nextInt(maxImages);
                       });
                     },
                     child: const Text('Another')),
