@@ -1,4 +1,5 @@
 
+import 'dart:collection';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ void main() => runApp(const MyApp());
 
 final _random = Random();
 const int maxImages = 150;
+final backStack = ListQueue<int>();
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -52,10 +54,23 @@ class MainScreenState extends State<MainScreen> {
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                backStack.isNotEmpty ?
+                  ElevatedButton(
+                      onPressed: ()  {
+                        setState(() {
+                          id = backStack.removeLast();
+                          debugPrint("setState Prev-ing; bs=$backStack");
+                        });
+                      },
+                      child: const Text('Previous')
+                  ) :
+                  const Text("No previous pics"),
                 ElevatedButton(
                     onPressed: ()  {
                       setState(() {
                         id = _random.nextInt(maxImages);
+                        backStack.add(id);
+                        debugPrint("setState Next-ing; bs=$backStack");
                       });
                     },
                     child: const Text('Another')),
@@ -67,7 +82,7 @@ class MainScreenState extends State<MainScreen> {
                       if (response.statusCode == 200) {
                         var json = jsonDecode(response.body);
                         message =
-"""Photographer: ${json['author']}
+                        """Photographer: ${json['author']}
 Origin: ${json['url']}
 PicSum ID: ${json['id']}
  """;
