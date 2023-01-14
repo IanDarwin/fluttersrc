@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      home: MainScreen(),
+      home: MainScreen(key: UniqueKey()),
     );
   }
 }
@@ -36,10 +36,19 @@ class MainScreen extends StatefulWidget {
 }
 
 class MainScreenState extends State<MainScreen> {
-  int id = _random.nextInt(maxImages);
+  late int id;
   MainScreenState();
+
+  @override
+  void initState() {
+    id = _random.nextInt(maxImages);
+    debugPrint("MainScreenState::initState: id $id, backStack $backStack");
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    debugPrint("MainScreenState::top-of-build: Loading id $id, backStack $backStack");
     return Scaffold(
       appBar: AppBar(
         title: const Text('Flutter Demo: Random Picture'),
@@ -58,18 +67,20 @@ class MainScreenState extends State<MainScreen> {
                   ElevatedButton(
                       onPressed: ()  {
                         setState(() {
-                          id = backStack.removeLast();
-                          debugPrint("setState Prev-ing; bs=$backStack");
+                          int oldId = id;
+                          id = backStack.removeLast(); // Now go back one.
+                          backStack.add(oldId);
+                          debugPrint("setState Prev-ing; id now $id, bs=$backStack");
                         });
                       },
                       child: const Text('Previous')
                   ) :
-                  const Text("No previous pics"),
+                    Text("No previous pics"),
                 ElevatedButton(
                     onPressed: ()  {
                       setState(() {
-                        id = _random.nextInt(maxImages);
                         backStack.add(id);
+                        id = _random.nextInt(maxImages);
                         debugPrint("setState Next-ing; bs=$backStack");
                       });
                     },
