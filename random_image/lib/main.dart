@@ -64,18 +64,16 @@ class MainScreenState extends State<MainScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 backStack.isNotEmpty ?
-                  ElevatedButton(
-                      onPressed: ()  {
-                        setState(() {
-                          int oldId = id;
-                          id = backStack.removeLast(); // Now go back one.
-                          backStack.add(oldId);
-                          debugPrint("setState Prev-ing; id now $id, bs=$backStack");
-                        });
-                      },
-                      child: const Text('Previous')
-                  ) :
-                    Text("No previous pics"),
+                ElevatedButton(
+                    onPressed: ()  {
+                      setState(() {
+                        id = backStack.removeLast(); // Now go back one.
+                        debugPrint("setState Prev-ing; id now $id, bs=$backStack");
+                      });
+                    },
+                    child: const Text('Previous')
+                )
+                    : const Text("No previous pics"),
                 ElevatedButton(
                     onPressed: ()  {
                       setState(() {
