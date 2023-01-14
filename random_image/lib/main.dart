@@ -59,6 +59,10 @@ class MainScreenState extends State<MainScreen> {
             'https://picsum.photos/id/$id/600/450',
           ),
         ),
+        // There are always three children:
+        //  Either a Previous button or "No previous pics"
+        //  The "Next" button ("Another")
+        //  The "Details button
         Center(
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +77,13 @@ class MainScreenState extends State<MainScreen> {
                     },
                     child: const Text('Previous')
                 )
-                    : const Text("No previous pics"),
+                    :
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.blueAccent)
+                  ),
+                  child: const Text("No previous pics"),
+                ),
                 ElevatedButton(
                     onPressed: ()  {
                       setState(() {
