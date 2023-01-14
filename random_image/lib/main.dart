@@ -54,11 +54,6 @@ class MainScreenState extends State<MainScreen> {
         title: const Text('Flutter Demo: Random Picture'),
       ),
       body: Column(children: [
-        Center(
-          child: Image.network(
-            'https://picsum.photos/id/$id/600/450',
-          ),
-        ),
         // There are always three children:
         //  Either a Previous button or "No previous pics"
         //  The "Next" button ("Another")
@@ -127,6 +122,11 @@ PicSum ID: ${json['id']}
                     },
                     child: const Text('Details')),
               ]),
+        ),
+        Center(
+          child: Image.network(
+            'https://picsum.photos/id/$id/600/450',
+          ),
         ),
       ],
       ),

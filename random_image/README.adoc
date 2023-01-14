@@ -24,14 +24,13 @@ site.
 The program is 99% functional, but could be improved:
 
 * Padding around the buttons.
-* Put the buttons at the bottom so they don't dance when image loading is slow.
 * A "Forward" button to complement the "Previous" button
 * "Details" dialog to use html view with <a>,
 or else a second button, either to
 "View original"
 * Cache the images so they don't have to re-fetch when you go back to them
 * Error checking for the odd 404 error
-(I assume there are images that have been pulled and not replaced).
+(I assume these are images that have been pulled and not replaced).
 
 == Icon
 
