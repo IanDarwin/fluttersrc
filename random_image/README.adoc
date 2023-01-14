@@ -13,6 +13,16 @@ bad images may have bad results.
 A site that collects random photos off the internet, most of them not half-bad,
 and makes them available.
 
+== Improvements
+
+The program is fully functional, but could be improved:
+
+* Padding around the buttons.
+* Put the buttons at the bottom so they don't dance if image loading is slow.
+* A "Forward" button to complement the "Previous" button
+* Cache the images so they don't have to re-fetch when you go back to them
+* Error checking for the odd 404 error
+(I assume there are images that have been pulled and not replaced).
 
 == Icon
 
