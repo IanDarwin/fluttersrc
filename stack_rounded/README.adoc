@@ -1,0 +1,4 @@
+= stack_rounded
+
+A Flutter project showing a radiused box,
+common in this year's layouts.
