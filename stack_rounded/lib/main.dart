@@ -40,11 +40,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   static const borderRadiusTop = BorderRadius.only(
-    topLeft: Radius.circular(32.0), topRight: Radius.circular(32.0));
+      topLeft: Radius.circular(32.0), topRight: Radius.circular(32.0));
   static const borderRadiusDropLeft = BorderRadius.only(
-    topLeft: Radius.circular(32.0), bottomRight: Radius.circular(32.0));
+      topLeft: Radius.circular(32.0), bottomRight: Radius.circular(32.0));
   static const borderRadiusDropRight = BorderRadius.only(
-    topRight: Radius.circular(32.0), bottomLeft: Radius.circular(32.0));
+      topRight: Radius.circular(32.0), bottomLeft: Radius.circular(32.0));
 
   void doSomethingAndRedisplay() {
     setState(() {
@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.black))),
           ),
 
-	        // The large blue box with rounded top
+          // Large blue box with rounded top
           Container(
             margin: const EdgeInsets.fromLTRB(0, 150, 0, 0),
             padding: const EdgeInsets.all(0),
@@ -87,18 +87,53 @@ class _MyHomePageState extends State<MyHomePage> {
               borderRadius:borderRadiusTop,
               border:Border.all(color:Color(0x4d9e9e9e),width:1),
             ),
-            child: Center(child:
-            Text("Your name in lights!",
-              style: GoogleFonts.explora(
-              textStyle: Theme.of(context).textTheme.headline4,
-              fontSize: 48,
-              fontWeight: FontWeight.w400,
-              fontStyle: FontStyle.italic,
-              color: Colors.white))
+            child: Center(child: Text("Your name in lights!",
+                style: GoogleFonts.explora(
+                    textStyle: Theme.of(context).textTheme.headline4,
+                    fontSize: 48,
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.white))
             ),
           ),
 
-	        // The avatar
+          // Dark box with opposite-rounded corners
+          Container(
+            margin: const EdgeInsets.fromLTRB(50, 300, 0, 0),
+            padding: const EdgeInsets.all(0),
+            height: 200,
+            width:  200,
+            decoration: BoxDecoration(
+              color:const Color(0xff000000),
+              shape:BoxShape.rectangle,
+              borderRadius: borderRadiusDropLeft,
+              border:Border.all(color:Color(0x4d9e9e9e),width:1),
+            ),
+          ),
+
+          // Medium off-white box with opposite-rounded corners
+          Container(
+            margin: const EdgeInsets.fromLTRB(150, 400, 0, 0),
+            padding: const EdgeInsets.all(0),
+            height: 200,
+            width:  200,
+            decoration: BoxDecoration(
+              color:const Color(0xfff0f0f0),
+              shape:BoxShape.rectangle,
+              borderRadius: borderRadiusDropRight,
+              border:Border.all(color:Color(0x4d9e9e9e),width:1),
+            ),
+            child: Center(child: Text("Our promise!",
+                style: GoogleFonts.explora(
+                    textStyle: Theme.of(context).textTheme.headline4,
+                    fontSize: 48,
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.black))
+            ),
+          ),
+
+          // The avatar
           Container(
             margin: const EdgeInsets.fromLTRB(0, 150-50, 0, 0),
             child: Row(
@@ -107,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 CircleAvatar(
                   radius: 50,
                   backgroundImage: NetworkImage(
-		              'https://www.gravatar.com/avatar/093d7a59c573047572c112bf79c83066'),
+                      'https://www.gravatar.com/avatar/093d7a59c573047572c112bf79c83066'),
                 )],
             ),
           ),
