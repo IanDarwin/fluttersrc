@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
               color:Color(0xffffffff),
             ),
             child:const Center(child:
-            Text("You snooze you lose!",
+            Text("Flutter Makes Nice Apps!",
                 style: TextStyle(
                     fontSize: 18,
                     color: Colors.black))),
@@ -101,27 +101,27 @@ class _MyHomePageState extends State<MyHomePage> {
               borderRadius: borderRadiusDropLeft,
               border:Border.all(color:Color(0x4d9e9e9e),width:1),
             ),
-            child: Image.asset("images/puffy_in_blue.png",
+            child: Image.asset("images/lion-in-the-sand.png",
                 width: 200.0, height: 200.0,
             ),
           ),
 
           // Medium off-white box with opposite-rounded corners
           Container(
-            margin: const EdgeInsets.fromLTRB(150, 400, 0, 0),
+            margin: const EdgeInsets.fromLTRB(150, 420, 0, 0),
             padding: const EdgeInsets.all(0),
             height: 200,
             width:  200,
             decoration: BoxDecoration(
-              color:const Color(0xb0f0f0f0),
+              color:const Color(0xc0f0f0f0),
               shape:BoxShape.rectangle,
               borderRadius: borderRadiusDropRight,
               border:Border.all(color:Color(0x4d9e9e9e),width:1),
             ),
-            child: Center(child: Text("Our promise!",
+            child: Center(child: Text("Lion in the sand",
                 style: GoogleFonts.explora(
                     textStyle: Theme.of(context).textTheme.headline4,
-                    fontSize: 48,
+                    fontSize: 46,
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.italic,
                     color: Colors.black))
