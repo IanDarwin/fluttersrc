@@ -1,12 +1,13 @@
-= expenses
+= expenses-nativeview
 
 A simple app for tracking expenses and submitting them to your HR department for reimbursement or tracking.
 
-This uses a NativeView to show the Expenses Detail/Edit form, and that part is currently only written for Android.
+This uses a PlatformView (not a full Android Activity) to show the Expenses Detail/Edit form, and that part is currently only written for Android.
 
 == Getting Started
 
-Just run the app and follow the prompts :-)  Seriuosly, this it not a production app yet by any means.
+Just run the app and follow the prompts :-)  Seriously,
+this is not a production app yet by any means.
 
 USE AT OWN RISK.
 
