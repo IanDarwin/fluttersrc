@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
               color:Color(0xffffffff),
             ),
             child:const Center(child:
-            Text("Flutter Makes Nice Apps!",
+            Text("We make Flutter Make Nice Apps!",
                 style: TextStyle(
                     fontSize: 18,
                     color: Colors.black))),
