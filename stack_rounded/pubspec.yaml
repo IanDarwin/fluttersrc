@@ -26,5 +26,9 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - images/puffy_in_blue.png
+
 assets:
-  - google_fonts
+    - google_fonts
+

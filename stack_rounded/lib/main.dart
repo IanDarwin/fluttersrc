@@ -87,14 +87,6 @@ class _MyHomePageState extends State<MyHomePage> {
               borderRadius:borderRadiusTop,
               border:Border.all(color:Color(0x4d9e9e9e),width:1),
             ),
-            child: Center(child: Text("Your name in lights!",
-                style: GoogleFonts.explora(
-                    textStyle: Theme.of(context).textTheme.headline4,
-                    fontSize: 48,
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.italic,
-                    color: Colors.white))
-            ),
           ),
 
           // Dark box with opposite-rounded corners
@@ -109,6 +101,9 @@ class _MyHomePageState extends State<MyHomePage> {
               borderRadius: borderRadiusDropLeft,
               border:Border.all(color:Color(0x4d9e9e9e),width:1),
             ),
+            child: Image.asset("images/puffy_in_blue.png",
+                width: 200.0, height: 200.0,
+            ),
           ),
 
           // Medium off-white box with opposite-rounded corners
@@ -118,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 200,
             width:  200,
             decoration: BoxDecoration(
-              color:const Color(0xfff0f0f0),
+              color:const Color(0xb0f0f0f0),
               shape:BoxShape.rectangle,
               borderRadius: borderRadiusDropRight,
               border:Border.all(color:Color(0x4d9e9e9e),width:1),
