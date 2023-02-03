@@ -85,24 +85,27 @@ class _MyHomePageState extends State<MyHomePage> {
               color:const Color(0xff0000ff),
               shape:BoxShape.rectangle,
               borderRadius:borderRadiusTop,
-              border:Border.all(color:Color(0x4d9e9e9e),width:1),
+              border:Border.all(color: const Color(0x4d9e9e9e),width:1),
             ),
           ),
 
-          // Dark box with opposite-rounded corners
+          // Photo in a box with opposite-rounded corners
           Container(
             margin: const EdgeInsets.fromLTRB(50, 300, 0, 0),
             padding: const EdgeInsets.all(0),
             height: 200,
             width:  200,
             decoration: BoxDecoration(
-              color:const Color(0xff000000),
-              shape:BoxShape.rectangle,
+              color: const Color(0xff000000),
+              shape: BoxShape.rectangle,
               borderRadius: borderRadiusDropLeft,
-              border:Border.all(color:Color(0x4d9e9e9e),width:1),
+              border:Border.all(color: const Color(0x4d9e9e9e),width:1),
             ),
-            child: Image.asset("images/lion-in-the-sand.png",
-                width: 200.0, height: 200.0,
+            child: FittedBox(
+                clipBehavior: Clip.hardEdge,
+                child: Image.asset("images/lion-in-the-sand.png",
+                  width: 200.0, height: 200.0
+                ),
             ),
           ),
 
@@ -116,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
               color:const Color(0xc0f0f0f0),
               shape:BoxShape.rectangle,
               borderRadius: borderRadiusDropRight,
-              border:Border.all(color:Color(0x4d9e9e9e),width:1),
+              border:Border.all(color: const Color(0x4d9e9e9e),width:1),
             ),
             child: Center(child: Text("Lion in the sand",
                 style: GoogleFonts.explora(
@@ -143,8 +146,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
+
       floatingActionButton: FloatingActionButton(
-        onPressed: () => print("FAB Pressed"),
+        onPressed: () => debugPrint("FAB Pressed"),
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
