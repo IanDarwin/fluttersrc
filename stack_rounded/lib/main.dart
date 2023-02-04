@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width:  200,
             child: ClipRRect(
               borderRadius: borderRadiusTopRightBottomLeft,
-              child: Image.asset("images/lion-in-the-sand.png",
+              child: Image.asset("images/sandy-lion-in-the-sand.png",
                   width: 200.0, height: 200.0
                 ),
             ),

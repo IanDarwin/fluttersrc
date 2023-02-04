@@ -25,14 +25,13 @@ flutter_icons:
   min_sdk_android: 21
   ios: true
   remove-alpha_ios: true
-  image_path: "images/lion-in-the-sand.png"
+  image_path: "images/sandy-lion-in-the-sand.png"
 
 flutter:
   uses-material-design: true
 
   assets:
-    - images/puffy_in_blue.png
-    - images/lion-in-the-sand.png
+    - images/sandy-lion-in-the-sand.png
 
 assets:
     - google_fonts
