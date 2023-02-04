@@ -12,3 +12,10 @@ at https://sandylion.com. That company has either renamed or been absorbed into
 Trends International (https://trendsinternational.com/)
 and they're not even marketing stickers under that name,
 according to a search on their web site.
+
+== TODO
+
+Add GestureDetectors around the two rounded
+containers, with various pop-ups.
+
+Animated background gradient.
