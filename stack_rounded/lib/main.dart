@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'alert.dart';
+
 void main() {
   // Obligatory license publication for Google Fonts
   // LicenseRegistry.addLicense(() async* {
@@ -142,9 +144,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () => debugPrint("FAB Pressed"),
+        onPressed: () {
+          debugPrint("FAB Pressed");
+          alert(context, "Thank you for being a star!", title: "Thanks");
+        },
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.star),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
