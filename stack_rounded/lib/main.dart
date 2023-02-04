@@ -40,11 +40,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   static const borderRadiusTop = BorderRadius.only(
-      topLeft: Radius.circular(32.0), topRight: Radius.circular(32.0));
-  static const borderRadiusDropLeft = BorderRadius.only(
-      topLeft: Radius.circular(32.0), bottomRight: Radius.circular(32.0));
-  static const borderRadiusDropRight = BorderRadius.only(
-      topRight: Radius.circular(32.0), bottomLeft: Radius.circular(32.0));
+      topLeft: Radius.circular(32.0), topRight: Radius.circular(36.0));
+  static const borderRadiusTopLeftBottomRight = BorderRadius.only(
+      topLeft: Radius.circular(32.0), bottomRight: Radius.circular(36.0));
+  static const borderRadiusTopRightBottomLeft = BorderRadius.only(
+      topRight: Radius.circular(32.0), bottomLeft: Radius.circular(36.0));
 
   void doSomethingAndRedisplay() {
     setState(() {
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
               color:Color(0xffffffff),
             ),
             child:const Center(child:
-            Text("We make Flutter Make Nice Apps!",
+            Text("We use Flutter to Make Nice Apps!",
                 style: TextStyle(
                     fontSize: 18,
                     color: Colors.black))),
@@ -95,15 +95,9 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.all(0),
             height: 200,
             width:  200,
-            decoration: BoxDecoration(
-              color: const Color(0xff000000),
-              shape: BoxShape.rectangle,
-              borderRadius: borderRadiusDropLeft,
-              border:Border.all(color: const Color(0x4d9e9e9e),width:1),
-            ),
-            child: FittedBox(
-                clipBehavior: Clip.hardEdge,
-                child: Image.asset("images/lion-in-the-sand.png",
+            child: ClipRRect(
+              borderRadius: borderRadiusTopRightBottomLeft,
+              child: Image.asset("images/lion-in-the-sand.png",
                   width: 200.0, height: 200.0
                 ),
             ),
@@ -118,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
             decoration: BoxDecoration(
               color:const Color(0xc0f0f0f0),
               shape:BoxShape.rectangle,
-              borderRadius: borderRadiusDropRight,
+              borderRadius: borderRadiusTopRightBottomLeft,
               border:Border.all(color: const Color(0x4d9e9e9e),width:1),
             ),
             child: Center(child: Text("Lion in the sand",
