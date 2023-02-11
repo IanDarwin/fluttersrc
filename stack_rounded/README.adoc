@@ -1,0 +1,21 @@
+= stack_rounded
+
+A Flutter project showing a radiused box,
+common in this year's layouts, and some
+radiused containers.
+
+"Sandy Lion" is a trademark of Rejminet Group only
+as applied to the lion image used in this app.
+SandyLion (one word) stickers, which our kids loved
+when they were young, were formerly made by a company of that name
+at https://sandylion.com. That company has either renamed or been absorbed into
+Trends International (https://trendsinternational.com/)
+and they're not even marketing stickers under that name,
+according to a search on their web site.
+
+== TODO
+
+Add GestureDetectors around the two rounded
+containers, with various pop-ups.
+
+Animated background gradient.

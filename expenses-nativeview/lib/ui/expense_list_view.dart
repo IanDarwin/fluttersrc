@@ -69,7 +69,7 @@ class ExpenseListView extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => debugPrint("FABulous!"),
+        onPressed: () => debugPrint("FABulous! But nothing happens."),
         child: const Icon(Icons.add),
       ),
     );

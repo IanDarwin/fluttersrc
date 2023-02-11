@@ -1,11 +1,11 @@
 {
-    "name": "listdetail",
-    "short_name": "listdetail",
+    "name": "stack_rounded",
+    "short_name": "stack_rounded",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "List/Detail",
+    "description": "A Flutter project. for radiused box",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

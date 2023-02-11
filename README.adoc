@@ -1,3 +1,13 @@
 = fluttersrc
 
-Like my javasrc repo, this is intended to be a catchall for various Flutter demos.
+Like my https://github.com/IanDarwin/javasrc[javasrc repo], this is intended to be a catchall for various Flutter demos.
+
+Each folder is a separate project, in which you can "flutter run" or open in Android Studio.
+
+* apple_looker - some Cupertino looking
+* expenses-nativeview - Show an Android view in a Flutter app
+* expenses-provider - example of Provider state mgmt
+* flutter_state - another state demo
+* l10n_counter_way1 - the I18N demo done "the first way" as per my deck
+* random_image - pick a random resonably-nice image
+* stack_rounded 0 modern page look, culled down to simplicity
