@@ -1,0 +1,4 @@
+= provider_sqlite_demo
+
+A Flutter project showing use of the Provider API in conjunction with SQLite (sqflite package)..
+
