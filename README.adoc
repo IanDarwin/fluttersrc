@@ -8,6 +8,7 @@ Each folder is a separate project, in which you can "flutter run" or open in And
 * expenses-nativeview - Show an Android view in a Flutter app
 * expenses-provider - example of Provider state mgmt
 * flutter_state - another state demo
-* l10n_counter_way1 - the I18N demo done "the first way" as per my deck
+* flowcase - shows off various UI techniques in Flutter
+* l10n_counter_way1 - the I18N demo done "the first way" as per my slide deck
 * random_image - pick a random resonably-nice image
-* stack_rounded 0 modern page look, culled down to simplicity
+* stack_rounded - modern page look, culled down to simplicity
