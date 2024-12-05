@@ -1,0 +1,15 @@
+= flowcase, the Flutter Showcase
+
+A *Fl*utter app that sh*owcase*s a dozen or so self-contained Flutter demos.
+Most are winnowed down to their minimum for
+easier understanding than some of the official
+demos which IMHO have a bit of rhetorical flourish that at least takes longer to read.
+
+== Maint
+
+If you change `images/logo.png`, be sure to run
+
+	flutter pub run flutter_launcher_icons
+
+This generates the derivative icon files for all platforms listed in the
+icons section of pubspec.yaml.
