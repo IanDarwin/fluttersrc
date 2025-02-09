@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   flutter_html: ^3.0.0-alpha.6
   flutter_settings_screens: ^0.3.3-null-safety+2
+  google_fonts: ^4.0.1
   url_launcher: ^6.1.7
 
 dev_dependencies:
