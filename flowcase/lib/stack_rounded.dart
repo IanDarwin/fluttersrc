@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'alert.dart';
 
+// main() left here so it could be run standalone, but is
+// normally called as part of FlowCase.
 void main() {
   // Obligatory license publication for Google Fonts
   // LicenseRegistry.addLicense(() async* {
@@ -25,18 +27,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: const MyHomePage(title: 'Stack Rounded Home Page'),
+      home: const StackRounded(title: 'Stack Rounded Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class StackRounded extends StatefulWidget {
+  const StackRounded({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<StackRounded> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {

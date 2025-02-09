@@ -143,6 +143,15 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               style: ButtonStyle(shape: shape),
+              child: const Text("Graphics Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    // Does not use Wrapper(), has own Scaffold
+                    builder: (context) => StackRounded()));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
               child: const Text("Layout Demo"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
@@ -155,7 +164,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("List Demo"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Lists', ListDemos(), "list_demos")));
+                    builder: (context) =>
+					const Wrapper('Lists', ListDemos(), "list_demos")));
 
               },
             ),
@@ -174,7 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) =>
-                        Wrapper('Login Screen', AuthForm(key: UniqueKey()), "login_screen")));
+                    Wrapper('Login Screen', AuthForm(key: UniqueKey()), "login_screen")));
               },
             ),
             ElevatedButton(
@@ -189,7 +199,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("Table Demo"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Tables', TableDemo(), "table_demo",)));
+                    builder: (context) =>
+					const Wrapper('Tables', TableDemo(), "table_demo",)));
               },
             ),
             ElevatedButton(
