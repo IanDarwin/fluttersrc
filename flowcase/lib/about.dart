@@ -22,7 +22,7 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Html(
         data: htmlText,
-        onLinkTap: (String? url, RenderContext context,
+        onLinkTap: (String? url,
             Map<String, String> attributes,
             dynamic element) async {
           await launchUrl(Uri.parse(url!),

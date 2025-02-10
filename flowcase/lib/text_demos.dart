@@ -43,7 +43,7 @@ both mobile (Android, iOS) and desktop (Linux, macOS, Windows).
             Html(
                 anchorKey: globalKey,
                 data: htmlText,
-                onLinkTap: (String? url, RenderContext context,
+                onLinkTap: (String? url,
                     Map<String, String> attributes,
                     dynamic element) async {
                   await launchUrl(Uri.parse(url!),
