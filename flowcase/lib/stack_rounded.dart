@@ -41,7 +41,7 @@ class StackRounded extends StatefulWidget {
   State<StackRounded> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<StackRounded> {
 
   static const borderRadiusTop = BorderRadius.only(
       topLeft: Radius.circular(32.0), topRight: Radius.circular(36.0));
@@ -121,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             child: Center(child: Text("Lion in the sand",
                 style: GoogleFonts.explora(
-                    textStyle: Theme.of(context).textTheme.headline4,
+                    textStyle: Theme.of(context).textTheme.headlineSmall,
                     fontSize: 46,
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.italic,

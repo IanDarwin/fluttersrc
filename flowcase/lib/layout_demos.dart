@@ -24,7 +24,7 @@ class LayoutState extends State<LayoutDemos> {
           textColor: Colors.white,
           leading: const Text("Leading"),
           title:  Text("ListTile Demo Title",
-              style: Theme.of(context).textTheme.headline6
+              style: Theme.of(context).textTheme.headlineSmall
           ),
           subtitle: const Text("SubTitle"),
           trailing: const Text("Trailing"),
@@ -34,17 +34,17 @@ class LayoutState extends State<LayoutDemos> {
             onTap: _tapped2,
             leading: const Icon(Icons.add_circle),
             title: Text("ListTile In Card Title",
-                style: Theme.of(context).textTheme.headline6
+                style: Theme.of(context).textTheme.headlineSmall
             ),
             subtitle: const Text("SubTitle"),
             trailing: const Text("Trailing"),
           ),
         ),
         Text("Here's a simple Container Child Text",
-            style: Theme.of(context).textTheme.headline6),
+            style: Theme.of(context).textTheme.headlineSmall),
         Container(height: 20,),
         Text("And a Grid Layout with Text:",
-            style: Theme.of(context).textTheme.headline6),
+            style: Theme.of(context).textTheme.headlineSmall),
         SizedBox(
           height: 400,
           child: GridView.count(

@@ -68,7 +68,7 @@ class _DragDropDemoState extends State<DragDropDemo> {
                   color: Colors.yellowAccent,
                   child: Center(
                     child: Text("Cart contains ${cartItems.length} items worth ${_totalValue(cartItems)}",
-                        style: Theme.of(context).textTheme.headline6
+                        style: Theme.of(context).textTheme.headlineSmall
                     ),
                   ),
                 ),

@@ -3,6 +3,7 @@ import 'package:flowcase/drag_drop.dart';
 import 'package:flowcase/layout_demos.dart';
 import 'package:flowcase/login_screen.dart';
 import 'package:flowcase/nav_drawer.dart';
+import 'package:flowcase/stack_rounded.dart';
 import 'package:flowcase/tab_demo.dart';
 import 'package:flowcase/text_demos.dart';
 import 'package:flowcase/wrapper.dart';
@@ -147,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                     // Does not use Wrapper(), has own Scaffold
-                    builder: (context) => StackRounded()));
+                    builder: (context) => const StackRounded(title: "Sandy Lion")));
               },
             ),
             ElevatedButton(
