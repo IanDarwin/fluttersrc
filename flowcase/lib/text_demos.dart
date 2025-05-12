@@ -29,10 +29,9 @@ both mobile (Android, iOS) and desktop (Linux, macOS, Windows).
               TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Welcome',
+                    text: 'Welcome to',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  TextSpan(text: ', attendee, to '),
                   TextSpan(
                     text: 'Flutter!',
                     style: TextStyle(fontStyle: FontStyle.italic),

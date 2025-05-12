@@ -8,12 +8,11 @@ class About extends StatelessWidget {
 <h1>About FlowCase, the Flutter Demo App</h1>
 <p>This app demonstrates some of the
     <a href="https://flutter.dev">Flutter</a>
-    widgets covered in the course, that will set you on your way to building
+    widgets that will set you on your way to building
     <i>all kinds of interactive applications</i>,
     both mobile (Android, iOS) and desktop (Linux, macOS, Windows).
 </p>
-<p>Course operated by <a href="https://learningtree.co.uk">Learning Tree International.</a></p>
-<p>Course prepared by <a href="https://darwinsys.com/">Ian Darwin, Rejminet Group Inc.</a></p>
+<p>Flutter Demos by <a href="https://rejmi.net/">Ian Darwin, Rejminet Group Inc.</a></p>
 </html>
 """;
 

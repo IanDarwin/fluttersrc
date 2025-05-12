@@ -226,7 +226,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("Animation"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Text', AnimationApp(), "animation_demo")));
+                    builder: (context) => const Wrapper('Animation', AnimationApp(), "animation_demo")));
               },
             ),
             ElevatedButton(
