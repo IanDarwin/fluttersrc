@@ -17,6 +17,7 @@ class AuthFormState extends State<AuthForm> {
   var _userPass = '';
   var _userUsername = '';
   final _formKey = GlobalKey<FormState>();
+
   void _trySubmit() {
     final bool? isValid = _formKey.currentState?.validate();
 
@@ -25,9 +26,8 @@ class AuthFormState extends State<AuthForm> {
     if (isValid!) {
       _formKey.currentState?.save();
 
-      debugPrint(_userEmail);
-      debugPrint(_userPass);
-      debugPrint(_userUsername);
+      debugPrint("Login attempt: $_userEmail/$_userPass Name $_userUsername");
+      Navigator.pop(context);
     }
   }
 
