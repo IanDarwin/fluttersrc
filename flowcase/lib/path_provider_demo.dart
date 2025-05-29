@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 
 import 'dialog_demos.dart' show alert;
 
-class PathProvider extends StatefulWidget {
-  const PathProvider({super.key});
+class PathProviderDemo extends StatefulWidget {
+  const PathProviderDemo({super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -13,41 +16,41 @@ class PathProvider extends StatefulWidget {
 
 class Datum {
 	final String name;
-	final String value;
+	final Object value;
 	final String explanation;
 	const Datum(this.name, this.value, this.explanation);
 }
-
-final data = [
-	Datum("applicationCacheDirectory", pathProvider.getApplicationCacheDirectory(),
+Directory root = Directory("NOT_AVAILABLE");
+List<Directory> roots = List.of(root as Iterable<Directory>);
+getData() async {
+  return [
+	Datum("applicationCacheDirectory", await getApplicationCacheDirectory(),
 		"directory where the application may place application-specific cache files."),
-	Datum("applicationDocumentsDirectory", pathProvider.getApplicationDocumentsDirectory(),
+	Datum("applicationDocumentsDirectory", await getApplicationDocumentsDirectory(),
 		"directory where the application may place data that is user-generated, or that cannot otherwise be recreated by your application."),
-	Datum("applicationSupportDirectory", pathProvider.getApplicationSupportDirectory(),
+	Datum("applicationSupportDirectory", await getApplicationSupportDirectory(),
 		"directory where the application may place application support files."),
-	Datum("downloadsDirectory", pathProvider.getDownloadsDirectory(),
+	Datum("downloadsDirectory", await getDownloadsDirectory()??root,
 		"directory where downloaded files can be stored."),
-	Datum("externalCacheDirectories", pathProvider.getExternalCacheDirectories(),
+	Datum("externalCacheDirectories", await getExternalCacheDirectories()??roots,
 		"directories where application specific cache data can be stored externally."),
-	Datum("externalStorageDirectories({StorageDirectory? type})
-		"directories where application specific data can be stored externally."),
-	Datum("externalStorageDirectory", pathProvider.getExternalStorageDirectory(),
+	// Datum("externalStorageDirectories", await getStorageDirectory(),
+	// 	"directories where application specific data can be stored externally."),
+	Datum("externalStorageDirectory", await getExternalStorageDirectory()??root,
 		"directory where the application may access top level storage."),
-	Datum("libraryDirectory", pathProvider.getLibraryDirectory(),
+	Datum("libraryDirectory", await getLibraryDirectory(),
 		"directory where application can store files that are persistent, backed up, and not visible to the user, such as sqlite.db."),
-	Datum("temporaryDirectory", pathProvider.getTemporaryDirectory(),
+	Datum("temporaryDirectory", await getTemporaryDirectory(),
 		"temporary directory on the device that is not backed up and is suitable for storing caches of downloaded files."),
-];
-
+  ];
+}
 
 class PathProviderDemoState extends State<PathProviderDemo> {
-  Offset _pos = Offset.zero;
   @override
   Widget build(BuildContext context) {
     List<Widget> list = [];
-    for (Datum d in data) {
+    for (Datum d in getData()) {
       list.add(GestureDetector(
-        onTapDown: (pos) {_getTapPosition(pos);},
         onTap: () => alert(context, d.explanation, title: "Details"),
         child: Text(
           "${d.name}, ${d.value}",
@@ -61,10 +64,5 @@ class PathProviderDemoState extends State<PathProviderDemo> {
     return ListView(
       children: list,
     );
-  }
-
-  void _getTapPosition(TapDownDetails tapPosition) {
-    final RenderBox referenceBox = context.findRenderObject() as RenderBox;
-    _pos = referenceBox.globalToLocal(tapPosition.globalPosition);
   }
 }
