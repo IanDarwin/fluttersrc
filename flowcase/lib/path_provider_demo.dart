@@ -15,54 +15,66 @@ class PathProviderDemo extends StatefulWidget {
 }
 
 class Datum {
-	final String name;
-	final Object value;
-	final String explanation;
-	const Datum(this.name, this.value, this.explanation);
+  final String name;
+  final Object value;
+  final String explanation;
+  const Datum(this.name, this.value, this.explanation);
+  @override
+  String toString() {
+    return "Datum($name,$value)";
+  }
 }
-Directory root = Directory("NOT_AVAILABLE");
-List<Directory> roots = List.of(root as Iterable<Directory>);
-getData() async {
-  return [
-	Datum("applicationCacheDirectory", await getApplicationCacheDirectory(),
-		"directory where the application may place application-specific cache files."),
-	Datum("applicationDocumentsDirectory", await getApplicationDocumentsDirectory(),
-		"directory where the application may place data that is user-generated, or that cannot otherwise be recreated by your application."),
-	Datum("applicationSupportDirectory", await getApplicationSupportDirectory(),
-		"directory where the application may place application support files."),
-	Datum("downloadsDirectory", await getDownloadsDirectory()??root,
-		"directory where downloaded files can be stored."),
-	Datum("externalCacheDirectories", await getExternalCacheDirectories()??roots,
-		"directories where application specific cache data can be stored externally."),
-	// Datum("externalStorageDirectories", await getStorageDirectory(),
-	// 	"directories where application specific data can be stored externally."),
-	Datum("externalStorageDirectory", await getExternalStorageDirectory()??root,
-		"directory where the application may access top level storage."),
-	Datum("libraryDirectory", await getLibraryDirectory(),
-		"directory where application can store files that are persistent, backed up, and not visible to the user, such as sqlite.db."),
-	Datum("temporaryDirectory", await getTemporaryDirectory(),
-		"temporary directory on the device that is not backed up and is suitable for storing caches of downloaded files."),
-  ];
-}
+const notSupported = "NOT AVAILABLE ON THIS PLATFORM";
 
 class PathProviderDemoState extends State<PathProviderDemo> {
+  List<Widget> list = [];
+  @override
+  void initState() {
+    print("initState");
+    fillItIn();
+    super.initState();
+  }
+  void fillItIn() async {
+    print("fillItIn");
+    await getData(context, list);
+    print("fillItIn: getData left us with $list");
+  }
+
   @override
   Widget build(BuildContext context) {
-    List<Widget> list = [];
-    for (Datum d in getData()) {
-      list.add(GestureDetector(
-        onTap: () => alert(context, d.explanation, title: "Details"),
-        child: Text(
-          "${d.name}, ${d.value}",
-          style: Theme.of(context)
-              .textTheme
-              .headlineSmall,
-        ),
-      )
-      );
-    }
+    print(list.length);
     return ListView(
       children: list,
     );
   }
+
+  Widget _makeEntry(String name, Object value, String explanation) {
+    return ListTile(
+      onTap: () => alert(context, explanation, title: "Details"),
+      title: Text("$name:"),
+      subtitle: Text("$value"),
+      tileColor: list.length % 2 == 0 ? Colors.orangeAccent : Colors.greenAccent,
+    );
+  }
+
+  Future<bool> getData(BuildContext context, List list) async {
+    list.add(_makeEntry("applicationCacheDirectory", await getApplicationCacheDirectory(),
+        "directory where the application may place application-specific cache files."));
+    list.add(_makeEntry("applicationDocumentsDirectory", await getApplicationDocumentsDirectory(),
+        "directory where the application may place data that is user-generated, or that cannot otherwise be recreated by your application."));
+    list.add(_makeEntry("applicationSupportDirectory", await getApplicationSupportDirectory(),
+        "directory where the application may place application support files."));
+    list.add(_makeEntry("downloadsDirectory", await getDownloadsDirectory()??notSupported,
+        "directory where downloaded files can be stored."));
+    list.add(_makeEntry("externalCacheDirectories", await getExternalCacheDirectories()??notSupported,
+      "directories where application specific cache data can be stored externally."));
+    list.add(_makeEntry("externalStorageDirectory", await getExternalStorageDirectory()??notSupported,
+        "directory where the application may access top level storage."));
+    list.add(_makeEntry("libraryDirectory", Platform.isAndroid?notSupported:await getLibraryDirectory(),
+        "directory where application can store files that are persistent, backed up, and not visible to the user, such as sqlite.db."));
+    list.add(_makeEntry("temporaryDirectory", await getTemporaryDirectory(),
+        "temporary directory on the device that is not backed up and is suitable for storing caches of downloaded files."));
+    return true;
+  }
 }
+
