@@ -20,25 +20,23 @@ class PathProviderDemoState extends State<PathProviderDemo> {
   List<Widget> list = [];
 
   @override
-  void initState() {
-    // print("initState");
-    fillItIn();
-    super.initState();
-  }
-
-  void fillItIn() async {
-    // print("fillItIn");
-    await getData(context, list);
-    // print("fillItIn: getData left us with $list");
-  }
-
-  @override
   Widget build(BuildContext context) {
-    print("List has ${list.length} tiles");
-    return ListView(
-      children: list,
+    return FutureBuilder(
+      future: getData(context, list),
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const CircularProgressIndicator();
+        }
+        if (snapshot.hasData) {
+          return ListView(
+            children: list,
+          );
+        }
+        return Container();
+      },
     );
   }
+
 
   Widget _makeEntry(String name, Object value, String explanation) {
     return ListTile(
@@ -63,7 +61,7 @@ class PathProviderDemoState extends State<PathProviderDemo> {
     list.add(_makeEntry("downloadsDirectory", await getDownloadsDirectory()??notSupported,
         "Directory where downloaded files can be stored."));
     list.add(_makeEntry("externalCacheDirectories", await getExternalCacheDirectories()??notSupported,
-      "Directories where application specific cache data can be stored externally."));
+        "Directories where application specific cache data can be stored externally."));
     list.add(_makeEntry("externalStorageDirectory", await getExternalStorageDirectory()??notSupported,
         "Directory where the application may access top level storage."));
     list.add(_makeEntry("libraryDirectory", Platform.isAndroid?notSupported:await getLibraryDirectory(),
