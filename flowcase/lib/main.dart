@@ -3,6 +3,7 @@ import 'package:flowcase/drag_drop.dart';
 import 'package:flowcase/layout_demos.dart';
 import 'package:flowcase/login_screen.dart';
 import 'package:flowcase/nav_drawer.dart';
+import 'package:flowcase/nav_drawer.dart';
 import 'package:flowcase/stack_rounded.dart';
 import 'package:flowcase/tab_demo.dart';
 import 'package:flowcase/text_demos.dart';
@@ -18,6 +19,7 @@ import 'dialog_demos.dart';
 import 'fade_in_route.dart';
 import 'list_demos.dart';
 import 'list_tile_demo.dart';
+import 'path_provider_demo.dart';
 import 'table_demo.dart';
 
 void main() async {
@@ -186,6 +188,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) =>
                     Wrapper('Login Screen', AuthForm(key: UniqueKey()), "login_screen")));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("Path Provider Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) =>
+                    const Wrapper('PathProvider', PathProviderDemo(), "path_provider_demo",)));
               },
             ),
             ElevatedButton(
