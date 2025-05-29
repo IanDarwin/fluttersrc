@@ -14,35 +14,27 @@ class PathProviderDemo extends StatefulWidget {
   }
 }
 
-class Datum {
-  final String name;
-  final Object value;
-  final String explanation;
-  const Datum(this.name, this.value, this.explanation);
-  @override
-  String toString() {
-    return "Datum($name,$value)";
-  }
-}
 const notSupported = "NOT AVAILABLE ON THIS PLATFORM";
 
 class PathProviderDemoState extends State<PathProviderDemo> {
   List<Widget> list = [];
+
   @override
   void initState() {
-    print("initState");
+    // print("initState");
     fillItIn();
     super.initState();
   }
+
   void fillItIn() async {
-    print("fillItIn");
+    // print("fillItIn");
     await getData(context, list);
-    print("fillItIn: getData left us with $list");
+    // print("fillItIn: getData left us with $list");
   }
 
   @override
   Widget build(BuildContext context) {
-    print(list.length);
+    print("List has ${list.length} tiles");
     return ListView(
       children: list,
     );
@@ -53,7 +45,8 @@ class PathProviderDemoState extends State<PathProviderDemo> {
       onTap: () => alert(context, explanation, title: "Details"),
       title: Text("$name:"),
       subtitle: Text("$value"),
-      tileColor: list.length % 2 == 0 ? Colors.orangeAccent : Colors.greenAccent,
+      tileColor: notSupported == value ? Colors.red :
+        list.length % 2 == 0 ? Colors.orangeAccent : Colors.greenAccent,
     );
   }
 
